@@ -4,19 +4,34 @@ const { categories } = require("./help")
 // Remove undesired default mappings
 const unmaps = {
   mappings: [
-    "sb", "sw", "ob",
-    "ow", "cp", ";cp",
-    ";ap", "spa", "spb",
-    "spd", "sps", "spc",
-    "spi", "sfr", "zQ",
-    "zz", "zR", "ab",
-    "Q", "q", "ag",
-    "af", ";s", "yp",
-    "<Ctrl-j>", "<Ctrl-h>",
+    "sb",
+    "sw",
+    "ob",
+    "ow",
+    "cp",
+    ";cp",
+    ";ap",
+    "spa",
+    "spb",
+    "spd",
+    "sps",
+    "spc",
+    "spi",
+    "sfr",
+    "zQ",
+    "zz",
+    "zR",
+    "Q",
+    "q",
+    "ag",
+    "af",
+    ";s",
+    "yp",
+    "<Ctrl-j>",
+    "<Ctrl-h>",
   ],
   searchAliases: {
-    s: ["g", "d", "b",
-      "w", "s", "h"],
+    s: ["g", "d", "b", "w", "s", "h"],
   },
 }
 
@@ -171,7 +186,10 @@ const maps = {
     {
       alias:       "A",
       description: "Open search result (non-active new tab)",
-      callback:    actions.createHint("a.fl, .r>a", actions.openAnchor({ newTab: true, active: false })),
+      callback:    actions.createHint(
+        "a.fl, .r>a",
+        actions.openAnchor({ newTab: true, active: false })
+      ),
     },
   ],
 
@@ -192,7 +210,10 @@ const maps = {
     {
       alias:       "A",
       description: "Open search result (non-active new tab)",
-      callback:    actions.createHint(".result__a", actions.openAnchor({ newTab: true, active: false })),
+      callback:    actions.createHint(
+        ".result__a",
+        actions.openAnchor({ newTab: true, active: false })
+      ),
     },
     {
       leader:      "",
@@ -201,7 +222,6 @@ const maps = {
       callback:    () => document.querySelector(".result--more__btn").click(),
     },
   ],
-
 
   "yelp.com": [
     {
@@ -216,7 +236,10 @@ const maps = {
       leader:      "",
       alias:       "A",
       description: "Open video",
-      callback:    actions.createHint("*[id='video-title']", actions.openAnchor({ newTab: true })),
+      callback:    actions.createHint(
+        "*[id='video-title']",
+        actions.openAnchor({ newTab: true })
+      ),
     },
     {
       leader:      "",
@@ -228,13 +251,16 @@ const maps = {
       leader:      "",
       alias:       "gH",
       description: "Goto homepage",
-      callback:    actions.openLink("https://www.youtube.com/feed/subscriptions?flow=2"),
+      callback:    actions.openLink(
+        "https://www.youtube.com/feed/subscriptions?flow=2"
+      ),
     },
     {
       leader:      "",
       alias:       "F",
       description: "Toggle fullscreen",
-      callback:    () => document.querySelector(".ytp-fullscreen-button.ytp-button").click(),
+      callback:    () =>
+        document.querySelector(".ytp-fullscreen-button.ytp-button").click(),
     },
     {
       leader:      "",
@@ -278,7 +304,8 @@ const maps = {
       description: "View Pull Request",
       callback:    actions.gh.openPull,
     },
-    { // TODO: Add repetition support: 3gu
+    {
+      // TODO: Add repetition support: 3gu
       leader:      "",
       alias:       "gu",
       description: "Go up one path in the URL (GitHub)",
@@ -416,7 +443,10 @@ const maps = {
     {
       alias:       "A",
       description: "View post (link) (non-active new tab)",
-      callback:    actions.createHint(".title", actions.openAnchor({ newTab: true, active: false })),
+      callback:    actions.createHint(
+        ".title",
+        actions.openAnchor({ newTab: true, active: false })
+      ),
     },
     {
       alias:       "c",
@@ -426,7 +456,10 @@ const maps = {
     {
       alias:       "C",
       description: "View post (comments) (non-active new tab)",
-      callback:    actions.createHint(".comments", actions.openAnchor({ newTab: true, active: false })),
+      callback:    actions.createHint(
+        ".comments",
+        actions.openAnchor({ newTab: true, active: false })
+      ),
     },
   ],
 
@@ -469,7 +502,10 @@ const maps = {
     {
       alias:       "C",
       description: "View post (comments) (non-active new tab)",
-      callback:    actions.createHint("td > a[href*='item']:not(.storylink)", actions.openAnchor({ newTab: true, active: false })),
+      callback:    actions.createHint(
+        "td > a[href*='item']:not(.storylink)",
+        actions.openAnchor({ newTab: true, active: false })
+      ),
     },
     {
       leader:      "",
@@ -500,7 +536,9 @@ const maps = {
     {
       alias:       "v",
       description: "View product",
-      callback:    actions.createHint("ul[class^='postsList_'] > li > div[class^='item_'] > a"),
+      callback:    actions.createHint(
+        "ul[class^='postsList_'] > li > div[class^='item_'] > a"
+      ),
     },
     {
       alias:       "s",
@@ -518,12 +556,17 @@ const maps = {
     {
       alias:       "a",
       description: "View shot",
-      callback:    actions.createHint(".dribbble-over, .gif-target, .more-thumbs a"),
+      callback:    actions.createHint(
+        ".dribbble-over, .gif-target, .more-thumbs a"
+      ),
     },
     {
       alias:       "A",
       description: "View shot (non-active new tab)",
-      callback:    actions.createHint(".dribbble-over, .gif-target, .more-thumbs a", actions.openAnchor({ newTab: true, active: false })),
+      callback:    actions.createHint(
+        ".dribbble-over, .gif-target, .more-thumbs a",
+        actions.openAnchor({ newTab: true, active: false })
+      ),
     },
     {
       alias:       "v",
@@ -561,7 +604,10 @@ const maps = {
     {
       alias:       "A",
       description: "View project (non-active new tab)",
-      callback:    actions.createHint(".rf-project-cover__title", actions.openAnchor({ newTab: true, active: false })),
+      callback:    actions.createHint(
+        ".rf-project-cover__title",
+        actions.openAnchor({ newTab: true, active: false })
+      ),
     },
   ],
 
@@ -587,7 +633,9 @@ const maps = {
     {
       alias:       "a",
       description: "View page",
-      callback:    actions.createHint("#bodyContent :not(sup):not(.mw-editsection) > a"),
+      callback:    actions.createHint(
+        "#bodyContent :not(sup):not(.mw-editsection) > a"
+      ),
     },
   ],
 

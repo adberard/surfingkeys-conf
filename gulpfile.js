@@ -37,7 +37,7 @@ const requireSrcFiles = () => {
 }
 
 const paths = {
-  scripts:     ["conf.priv.js", "completions.js", "conf.js", "actions.js", "help.js", "keys.js", "util.js"],
+  scripts:     ["conf.priv.js", "completions.js", "conf.js", "actions.js", "help.js", "keys.js", "util.js", "theme.js"],
   entry:       "conf.js",
   gulpfile:    "gulpfile.js",
   readme:      "README.tmpl.md",
