@@ -1,9 +1,9 @@
-const greyish =`#44475a`
+const greyish = "#44475a"
 const frameOrange = "#DA3C0D"
 const yellow = "#f1fa8c"
 const omnibarFolder = "#ff79c6"
 const frameBackground = "#8178DE"
-const green = "#50fa7b"
+// const green = "#50fa7b"
 const ligtblue = "#8be9fd"
 const blueish = "#f8f8f2"
 const orange = "#ffb86c"
